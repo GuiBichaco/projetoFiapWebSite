@@ -1,1 +1,6 @@
-/* Arquivo para styles gerais da página */
+/* Arquivo para styles da página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
