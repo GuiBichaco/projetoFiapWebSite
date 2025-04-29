@@ -1,1 +1,52 @@
 /* Arquivo para fontes usadas no projeto */
+
+@font-face {
+    font-family: 'Gotham Black';
+    src: url('../assets/fonts/gotham/GothamHTF-Black.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Gotham Bold';
+    src: url('../assets/fonts/gotham/GothamHTF-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Gotham Book';
+    src: url('../assets/fonts/gotham/GothamHTF-Book.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Gotham Light';
+    src: url('../assets/fonts/gotham/GothamHTF-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Gotham Medium';
+    src: url('../assets/fonts/gotham/GothamHTF-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Gotham Thin';
+    src: url('../assets/fonts/gotham/GothamHTF-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Gotham Ultra';
+    src: url('../assets/fonts/gotham/GothamHTF-Ultra.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Gotham XLight';
+    src: url('../assets/fonts/gotham/GothamHTF-XLight.otf') format('opentype');
+}
+
+:root {
+    --font-black: 'Gotham Black';
+    --font-bold: 'Gotham Bold';
+    --font-book: 'Gotham Book';
+    --font-light: 'Gotham Light';
+    --font-medium: 'Gotham Medium';
+    --font-thin: 'Gotham Thin';
+    --font-ultra: 'Gotham Ultra';
+    --font-xlight: 'Gotham XLight';
+}
