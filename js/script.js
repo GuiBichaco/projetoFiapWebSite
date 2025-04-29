@@ -1,0 +1,1 @@
+// Arquivo para Efeitos, animações, funções e etc em JS
