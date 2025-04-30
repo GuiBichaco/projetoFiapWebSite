@@ -100,3 +100,22 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
+// Seleciona o botão
+const scrollButton1 = document.getElementById("scrollToTop");
+
+// Detecta o scroll na página
+window.addEventListener("scroll", () => {
+  if (window.scrollY > window.innerHeight) { // Aparece após scrollar 100vh
+    scrollButton1.style.display = "block"; // Mostra o botão
+  } else {
+    scrollButton1.style.display = "none"; // Esconde o botão
+  }
+});
+
+// Adiciona funcionalidade para voltar ao topo
+scrollButton1.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Scroll suave até o topo
+  });
+});

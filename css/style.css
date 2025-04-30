@@ -148,6 +148,31 @@
     transform: scale(1.1);
 }
 
+/* Scroll UP */
+
+.scroll-top-button {
+    position: fixed;
+    bottom: 50px; /* Posicionado na parte inferior */
+    right: 30px; /* Posicionado à direita */
+    display: none; /* Inicialmente escondido */
+    background: none; /* Sem fundo */
+    border: 2px solid #FF005C; /* Bordas rosas */
+    border-radius: 50%; /* Botão circular */
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: none; /* Remove sombras adicionais */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Suavidade nos efeitos */
+  }
+  
+  .scroll-top-button:hover {
+    transform: scale(1.1); /* Ampliação suave ao passar o mouse */
+  }
+  
+  .scroll-top-button img {
+    width: 24px; /* Ajuste o tamanho do SVG */
+    height: auto;
+  }
+  
 /* Container geral para Educação e Tech */
 .educacao-tech .container {
     display: flex;
