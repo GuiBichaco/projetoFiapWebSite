@@ -10,7 +10,8 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%; /* Faz com que ocupe toda a largura da tela */
+    width: 100%;
+    /* Faz com que ocupe toda a largura da tela */
 }
 
 .progress-bar {
@@ -43,4 +44,65 @@
     max-width: 80px;
     height: auto;
     margin-bottom: 5px;
+}
+
+/* Header */
+.hero {
+    background: url('../assets/imgs/header.jpg') center center / cover no-repeat;
+    /* Apenas a imagem */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Alinha o conteúdo à esquerda */
+    position: relative;
+    /* Necessário para o ::before funcionar */
+    text-align: left;
+    padding-left: 5%;
+    /* Espaçamento à esquerda */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #000000 40%, transparent 80%);
+    /* Aumenta a largura do preto */
+    z-index: 0;
+    /* Fica abaixo do conteúdo */
+}
+
+.hero-content {
+    color: #ACC1CC;
+    /* Contraste com o fundo */
+    position: relative;
+    z-index: 1;
+    /* Sobrepõe o gradiente */
+    max-width: 50%;
+    /* Limita a largura do texto para uma melhor leitura */
+    font-family: var(--font-light);
+}
+
+.hero-content h1 {
+    font-family: var(--font-light);
+    color: transparent;
+    -webkit-text-stroke: 2px #ACC1CC;
+    text-transform: uppercase;
+    font-size: 80px;
+    white-space: nowrap;
+    margin-bottom: 2rem;
+}
+
+#titulo-contraste {
+    -webkit-text-stroke: 2px #ED145B;
+    font-family: var(--font-bold);
+}
+
+.hero-content p {
+    font-family: var(--font-light);
+    font-size: 20px;
+    margin-bottom: 30px;
 }
