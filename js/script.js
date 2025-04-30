@@ -36,27 +36,67 @@ const closeModal = document.getElementById("closeModal");
 
 // Abre o modal
 imageToOpen.onclick = function () {
-  modal.style.display = "block";
-  modalImage.src = this.src;
-  modal.classList.add("opened");
+    modal.style.display = "block";
+    modalImage.src = this.src;
+    modal.classList.add("opened");
 };
 
 // Fecha o modal ao clicar no "X"
 closeModal.onclick = function () {
-  modal.style.display = "none";
-  modal.classList.remove("opened");
+    modal.style.display = "none";
+    modal.classList.remove("opened");
 };
 
 // Fecha o modal ao clicar fora da imagem
 window.onclick = function (event) {
-  if (event.target === modal) {
-    modal.style.display = "none";
-    modal.classList.remove("opened");
-  }
+    if (event.target === modal) {
+        modal.style.display = "none";
+        modal.classList.remove("opened");
+    }
 };
 
 //Fecha o modal ao clicar na imagem ampliada
 modalImage.onclick = function () {
-  modal.style.display = "none";
-  modal.classList.remove("opened");
+    modal.style.display = "none";
+    modal.classList.remove("opened");
 };
+
+document.addEventListener('DOMContentLoaded', function () {
+    const items = document.querySelectorAll('.estrutura-item');
+
+    items.forEach(item => {
+        const button = item.querySelector('.toggle-button');
+
+        button.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+
+            // Fecha todos
+            items.forEach(i => {
+                i.classList.remove('active');
+                setIcon(i, false); // seta ícone para +
+            });
+
+            if (!isActive) {
+                item.classList.add('active');
+                setIcon(item, true); // seta ícone para -
+            }
+        });
+    });
+
+    function setIcon(item, opened) {
+        const iconSpan = item.querySelector('.icon');
+        if (opened) {
+            // Ícone de menos
+            iconSpan.innerHTML = `
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path d="M5 12h14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>`;
+        } else {
+            // Ícone de mais
+            iconSpan.innerHTML = `
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>`;
+        }
+    }
+});

@@ -296,13 +296,120 @@
     /* Ativa o efeito parallax */
 }
 
+.nossa-estrutura {
+    padding: 4rem 0;
+    background: radial-gradient(circle at left, #006bb773 2%, transparent 15%),
+        radial-gradient(circle at right, #006bb773 2%, transparent 15%),
+        black;
 
 
 
+    color: #ACC1CC;
+}
 
+.nossa-estrutura h2 {
+    font-size: 80px;
+    font-family: var(--font-book);
+    margin-bottom: 6rem;
+    text-transform: uppercase;
+}
 
+.estrutura-item {
+    border-top: 1px solid #ACC1CC;
+    padding: 1rem 0;
+    transition: border-color 0.3s ease;
+}
+.estrutura-item.active {
+    border-top: 1px solid #ED145B;
+  }
 
+.estrutura-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
 
+.estrutura-header h3 {
+    font-size: 25px;
+    font-family: var(--font-bold);
+    text-transform: uppercase;
+    margin: 2rem;
+    letter-spacing: 1px;
+}
+
+.toggle-button {
+    display: flex;
+    background: none;
+    border: 2px solid #ED145B;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 8px;
+    width: 48px;
+    height: 48px;
+    color: #ED145B;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+  
+
+.toggle-button svg {
+    width: 24px;
+    height: 24px;
+}
+
+.estrutura-content {
+    display: none;
+    margin-top: 1rem;
+    color: #AFAFAF;
+    font-size: 18px;
+    font-family: var(--font-light);
+    line-height: 1.5;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.6s ease, opacity 0.6s ease;
+}
+/* Quando aberto */
+.estrutura-item.active .estrutura-content {
+    display: block; /* para fallback */
+    max-height: 500px; /* pode ajustar */
+    opacity: 1;
+}
+
+.cta {
+    background: linear-gradient(180deg, #000000 0%, #000000 100%);
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 80px;
+    font-family: var(--font-book);
+    margin-bottom: 70px;
+    text-transform: uppercase;
+    color: #ACC1CC;
+}
+
+.btn {
+    color: #ED145B;
+    border: 2px solid #ED145B;
+    padding: 15px 45px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: var(--font-light);
+    transition: background 0.3s, transform 0.3s;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #ED145B;
+    color: #000000;
+    transform: scale(1.05);
+}
 
 .fade-in {
     opacity: 0;
@@ -333,5 +440,38 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+/* Responsivo */
+@media (max-width: 768px) {
+    .educacao-tech .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .educacao-tech .text,
+    .educacao-tech .image {
+        margin: 20px 0;
+    }
+
+    .hero {
+        background-attachment: scroll;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .nossa-estrutura h2 {
+        font-size: 2rem;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
     }
 }
